@@ -1,0 +1,6 @@
+(menhir (modules parser))
+(ocamllex lexer)
+
+(library
+  (public_name qasm)
+)
