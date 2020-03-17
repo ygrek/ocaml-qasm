@@ -1,8 +1,7 @@
 open Printf
 open Syntax
+open Prelude
 
-let id x = x
-let ($) f g = fun x -> f (g x)
 let print s = print_endline (s ^ ";")
 let pr fmt = ksprintf print fmt
 let indent s = "  " ^ s
