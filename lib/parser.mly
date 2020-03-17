@@ -11,7 +11,7 @@ open Syntax
 %token <string> ID
 %token <Syntax.unop> UNOP
 
-%token OPENQASM QREG CREG GATE OPAQUE BARRIER MEASURE RESET IF PI
+%token OPENQASM2_0 QREG CREG GATE OPAQUE BARRIER MEASURE RESET IF PI
 %token EOI
 %token LBRACKET RBRACKET LPAREN RPAREN LCURLY RCURLY
 %token COMMA SEMICOLON ARROW EQ PLUS MINUS MUL DIV POW
@@ -26,7 +26,7 @@ open Syntax
 
 let parentheses(x) == delimited(LPAREN,x,RPAREN)
 
-let program := OPENQASM; ~ = REAL; SEMICOLON; ~ = nonempty_list(terminated(statement,SEMICOLON) | gatedecl); EOI; <>
+let program := OPENQASM2_0; SEMICOLON; ~ = nonempty_list(terminated(statement,SEMICOLON) | gatedecl); EOI; <>
 
 let statement :=
   | QREG; ~ = ID; LBRACKET; ~ = INT; RBRACKET; <QReg>

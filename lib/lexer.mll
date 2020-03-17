@@ -51,7 +51,7 @@ and token = parse
 
   | "//" { ignore (comment "" lexbuf); token lexbuf }
 
-  | "OPENQASM" { OPENQASM }
+  | "OPENQASM" wsp "2.0" { OPENQASM2_0 }
   | "include" wsp '"' [^ '"']+ '"' ';' { token lexbuf } (* TODO *)
 
   | "qreg" { QREG }

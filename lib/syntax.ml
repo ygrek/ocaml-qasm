@@ -35,4 +35,4 @@ type statement =
 | Barrier of arg list
 | If of (id * int) * qop
 
-type program = float * statement list
+type program = statement list
