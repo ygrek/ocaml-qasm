@@ -3,6 +3,5 @@
 
 (library
   (public_name qasm)
-  (libraries ppx_deriving.std)
   (preprocess (pps ppx_deriving.std))
 )
